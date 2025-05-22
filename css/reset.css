@@ -1,0 +1,18 @@
+/* css/layout/reset.css */
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}

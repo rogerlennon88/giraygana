@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gira Y Gana</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <section id="brand">
+        <img class="logo" src="./img/logo-white.png" alt="Logo Gira Y Gana" />
+      </section>
+    </header>
+    <main>
+      <section id="title-page">
+        <h1 class="title hidden">Ruleta de Premios</h1>
+        <p class="description hidden">Testo de descripción aquí</p>
+      </section>
+
+      <section id="game">
+        <div class="prize-wheel-container">
+          <section class="spin-container">
+            <img src="img/marcador.svg" alt="Marcador" class="spin--marker" />
+            <img src="img/ruleta.svg" alt="Ruleta" class="spin--wheel" />
+          </section>
+          <button id="spin-button" class="btn btn-primary" disabled>Girar</button>
+        </div>
+      </section>
+
+      <section id="payment" class="hidden">
+        <p id="payment-text"></p>
+        <button id="finalizar-button">Finalizar</button>
+      </section>
+
+      <div id="modal" class="modal-container">
+        <p id="modal-text"></p>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>

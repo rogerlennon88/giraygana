@@ -1,0 +1,29 @@
+/* css/components/ferris-wheel.css */
+.prize-wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.spin-container {
+  position: relative;
+  width: 90%;
+  padding-top: 32px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.spin--wheel {
+  width: 100%;
+  height: 100%;
+}
+
+.spin--marker {
+  position: absolute;
+  top: 0;
+  width: 32px;
+  aspect-ratio: auto;
+  z-index: 1;
+}

@@ -1,0 +1,41 @@
+/* css/style.css */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: var(--fz-sm);
+  min-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+header {
+  background-color: rgb(129, 133, 137);
+  padding: var(--space-sm);
+  display: flex;
+  justify-content: space-around;
+}
+main {
+  padding: var(--space-sm);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--space-xl);
+}
+
+#brand .logo {
+  height: 64px;
+  aspect-ratio: auto;
+  display: inline-block;
+}
+
+#game {
+  display: grid;
+  grid-template-areas: "content";
+}
+#game div:first-child {
+  grid-area: content;
+}

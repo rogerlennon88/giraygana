@@ -1,0 +1,14 @@
+# Logs
+*.log
+
+# System files
+.DS_Store
+
+# Node.js dependencies
+node_modules/
+
+# Temporary files
+*.tmp
+
+# VS Code settings
+.vscode/

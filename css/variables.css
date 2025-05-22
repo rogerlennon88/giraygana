@@ -1,0 +1,13 @@
+/* css/layout/variables.css */
+
+:root {
+    --color-primary: rgb(52, 152, 219);
+    --color-secondary: rgb(52, 152, 219);
+    --color-tertiary: rgb(52, 152, 219);
+    --fz-sm: 1.6rem;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}

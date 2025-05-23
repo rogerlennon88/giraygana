@@ -1,14 +1,15 @@
 /* js/main.js */
 const sectors = {
   s1: { label: "100K", type: "prize", rotation: 30, area: [5, 55] },
-  s2: { label: "Pierdes", type: "loss", rotation: 90, area: [650, 115] },
-  s3: { label: "50K", type: "prize", rotation: 150, area: [125, 175] },
+  s2: { label: "Pierdes", type: "loss", rotation: 330, area: [305, 355] },
+  s3: { label: "50K", type: "prize", rotation: 270, area: [245, 295] },
   s4: { label: "Otro Intento", type: "joker", rotation: 210, area: [185, 235] },
-  s5: { label: "30K", type: "prize", rotation: 270, area: [245, 295] },
-  s6: { label: "Pierdes", type: "loss", rotation: 330, area: [305, 355] },
+  s5: { label: "30K", type: "prize", rotation: 150, area: [125, 175] },
+  s6: { label: "Pierdes", type: "loss", rotation: 90, area: [65, 115] },
 }
 
-let prize = prompt("ingresa un indice")
+let prize = parseInt(prompt("ingresa un indice"))
+
 const joker = 3
 let score = 0
 
@@ -28,10 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("defineSpinResult - prize:", prize)
     const randomNumber = Math.random()
     let result = ""
+    let prizeProbability = 0.4
 
-    if (randomNumber < 0.5) {
-      result = Object.keys(sectors)[prize]
-    } else if (randomNumber > 0.5 && score > 0) {
+    if (score >= 2) {
+      prizeProbability = 1
+    }
+
+    if (randomNumber < prizeProbability) {
       result = Object.keys(sectors)[prize]
     } else {
       result = Object.keys(sectors)[joker]
@@ -50,27 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
     spinResult = defineSpinResult()
     console.log("spinPrizeWheel - spinResult:", spinResult)
 
-    let rotation = 0
-    switch (spinResult) {
-      case "s1":
-        rotation = 30
-        break
-      case "s2":
-        rotation = 90
-        break
-      case "s3":
-        rotation = 150
-        break
-      case "s4":
-        rotation = 210
-        break
-      case "s5":
-        rotation = 270
-        break
-      case "s6":
-        rotation = 330
-        break
+    let selectedArea = sectors[spinResult].area
+    const minAngle = selectedArea[0]
+    const maxAngle = selectedArea[1]
+    const possibleAngles = []
+    for (let angle = minAngle; angle <= maxAngle; angle += 5) {
+      possibleAngles.push(angle)
     }
+
+    const randomIndex = Math.floor(Math.random() * possibleAngles.length)
+    const finalRotationPoint = possibleAngles[randomIndex]
+
+    let rotation = finalRotationPoint
+    console.log(rotation)
 
     const animationDuration = 10000 // 10 seconds
     prizeWheel.style.transition = `transform ${animationDuration}ms cubic-bezier(0.25, 0.1, 0.25, 1)`
@@ -86,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         spinButton.disabled = false
         modalText.textContent = "¡Otro intento! Vuelve a girar."
         modal.style.display = "block"
-        // spinResult = defineSpinResult()
       } else if (sectors[spinResult].type === "prize") {
         console.log("spinPrizeWheel - type: prize, label:", sectors[spinResult].label)
         const prizeText = `¡Felicitaciones, ganaste ${sectors[spinResult].label}!`

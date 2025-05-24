@@ -18,8 +18,34 @@
         <p class="description hidden">Testo de descripción aquí</p>
       </section>
 
-      <section id="game">
+      <section id="register">
+        <form id="register-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="document-type">Tipo<span class="required-indicator">*</span></label>
+            <select id="document-type" name="document-type" required autocomplete="off">
+              <option value="" disabled selected></option>
+              <option value="cc">C.Ciudadanía</option>
+              <option value="ce">C.Extranjería</option>
+              <option value="pa">Pasaporte</option>
+            </select>
+            </div>
+            <div class="form-group document-id-group">
+              <label for="document-id">Documento de identidad</label>
+              <input type="text" id="document-id" name="document-id" required autocomplete="off"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="code">Código</label>
+            <input type="text" id="code" name="code" required autocomplete="off"/>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </section>
+
+      <section id="game"  class="hidden">
         <div class="prize-wheel-container">
+          <h3 class="spin-text"></h3>
           <section class="spin-container">
             <img src="img/marcador.svg" alt="Marcador" class="spin--marker" />
             <img src="img/ruleta.svg" alt="Ruleta" class="spin--wheel" />
@@ -28,15 +54,11 @@
         </div>
       </section>
 
-      <section id="payment" class="hidden">
-        <p id="payment-text"></p>
-        <button id="finalizar-button">Finalizar</button>
-      </section>
-
-      <div id="modal" class="modal-container">
+      <div id="modal" class="hidden">
         <p id="modal-text"></p>
+        <button id="finalizar-button">Finalizar</button>
       </div>
     </main>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
   </body>
 </html>

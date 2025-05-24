@@ -11,6 +11,7 @@
 @import url("./components/prize-wheel.css");
 @import url("./components/button.css");
 @import url("./components/modal.css");
+@import url("./components/register.css");
 
 /* breakpoints */
 @import url("./breakpoints.css");

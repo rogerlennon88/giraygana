@@ -1,5 +1,5 @@
 /* css/layout/reset.css */
 
 .hidden {
-    display: none;
+    display: none !important;
 }

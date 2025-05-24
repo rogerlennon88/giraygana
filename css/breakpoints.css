@@ -16,8 +16,10 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  #game {
-    grid-template-areas: "left content right";
+  body {
+    grid-template-areas:
+      "header header header"
+      "left content right";
   }
   .spin-container {
     width: 90%;
@@ -26,6 +28,11 @@
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  body {
+    grid-template-areas:
+      "header header header"
+      "left content right";
+  }
   .spin-container {
     width: 75%;
   }
@@ -33,6 +40,11 @@
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+  body {
+    grid-template-areas:
+      "header header header"
+      "left content right";
+  }
   .spin-container {
     width: 60%;
   }

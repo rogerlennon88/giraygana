@@ -13,6 +13,8 @@
       </section>
     </header>
     <main>
+      <div id="loader" class="hidden"><div class="spinner"></div></div>
+
       <section id="title-page">
         <h1 class="title hidden">Ruleta de Premios</h1>
         <p class="description hidden">Testo de descripción aquí</p>
@@ -22,28 +24,29 @@
         <form id="register-form">
           <div class="form-row">
             <div class="form-group">
-              <label for="document-type">Tipo<span class="required-indicator">*</span></label>
-            <select id="document-type" name="document-type" required autocomplete="off">
-              <option value="" disabled selected></option>
-              <option value="cc">C.Ciudadanía</option>
-              <option value="ce">C.Extranjería</option>
-              <option value="pa">Pasaporte</option>
-            </select>
+              <label for="document-type" class="required">Tipo</label>
+              <select id="document-type" name="document-type" required autocomplete="off">
+                <option value="" disabled selected></option>
+                <option value="cc">C.Ciudadanía</option>
+                <option value="ce">C.Extranjería</option>
+                <option value="pa">Pasaporte</option>
+              </select>
             </div>
             <div class="form-group document-id-group">
-              <label for="document-id">Documento de identidad</label>
-              <input type="text" id="document-id" name="document-id" required autocomplete="off"/>
+              <label for="document-id" class="required">Documento de identidad</label>
+              <input type="text" id="document-id" name="document-id" required autocomplete="off" />
+              <span id="document-id-error" class="error-message"></span>
             </div>
           </div>
           <div class="form-group">
-            <label for="code">Código</label>
-            <input type="text" id="code" name="code" required autocomplete="off"/>
+            <label for="code" class="required">Código</label>
+            <input type="text" id="code" name="code" required autocomplete="off" />
           </div>
           <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
       </section>
 
-      <section id="game"  class="hidden">
+      <section id="game" class="hidden">
         <div class="prize-wheel-container">
           <h3 class="spin-text"></h3>
           <section class="spin-container">
@@ -59,6 +62,6 @@
         <button id="finalizar-button">Finalizar</button>
       </div>
     </main>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
   </body>
 </html>

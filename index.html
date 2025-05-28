@@ -25,7 +25,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="document-type" class="required">Tipo</label>
-              <select id="document-type" name="document-type" required autocomplete="off">
+              <select id="document-type" name="document-type" required autocomplete="off" required>
                 <option value="" disabled selected></option>
                 <option value="cc">C.Ciudadanía</option>
                 <option value="ce">C.Extranjería</option>
@@ -34,13 +34,14 @@
             </div>
             <div class="form-group document-id-group">
               <label for="document-id" class="required">Documento de identidad</label>
-              <input type="text" id="document-id" name="document-id" required autocomplete="off" />
-              <span id="document-id-error" class="error-message"></span>
+              <input type="text" id="document-id" name="document-id" maxlength="10" required autocomplete="off" />
+              <span class="message-required document-info"></span>
             </div>
           </div>
           <div class="form-group">
             <label for="code" class="required">Código</label>
-            <input type="text" id="code" name="code" required autocomplete="off" />
+            <input type="text" id="code" name="code" maxlength="6" required autocomplete="off" />
+            <span class="message-required code-info"></span>
           </div>
           <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

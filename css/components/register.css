@@ -36,16 +36,23 @@
   color: #333;
 }
 
+.form-group input {
+  font-size: 14px;
+  color: #555;
+  text-transform: uppercase;
+}
+
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group select {
+  font-size: 14px;
+  color: #555;
+  text-transform: uppercase;
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 14px;
-  color: #555;
 }
 
 .form-group select {
@@ -79,17 +86,19 @@
   background-color: var(--color-secondary);
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] { -moz-appearance:textfield; }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
-.error-message {
-    color:#555;
-    font-size: 1rem;
+.message-required {
+  color: #e74c3c;
+  font-size: 1rem;
 }
 
 @media (min-width: 768px) {
